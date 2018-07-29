@@ -1,0 +1,64 @@
+<!--index.wxml-->
+  <view class='top'>
+    <view class='top_one'>
+      <view class="top_left">
+        <image src='http://p5tezjdao.bkt.clouddn.com/images/youku.png'></image>
+        <view class='top_font'>
+          <view class='top_font_top'>礼品一</view>
+          <view class='top_font_bottom'>优酷视频会员</view>
+        </view>
+      </view>
+
+      <view class="top_left">
+        <image src='http://p5tezjdao.bkt.clouddn.com/images/money.png'></image>
+        <view class='top_font'>
+          <view class='top_font_top'>礼品二</view>
+          <view class='top_font_bottom'>10元代金劵</view>
+        </view>
+      </view>
+
+    </view>
+    <view class='top_two'>
+      <view class="top_left">
+        <image src='http://p5tezjdao.bkt.clouddn.com/images/movie.png'></image>
+        <view class='top_font'>
+          <view class='top_font_top'>礼品三</view>
+          <view class='top_font_bottom'>电影兑换劵</view>
+        </view>
+      </view>
+
+      <view class="top_left">
+        <image src='http://p5tezjdao.bkt.clouddn.com/images/phone.png'></image>
+        <view class='top_font'>
+          <view class='top_font_top'>礼品四</view>
+          <view class='top_font_bottom'>10元话费</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class='footer_btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">开心兑，领礼品</button>
+
+  <view class='cover' hidden="{{hideName}}"></view>
+  <view class='cover_con' hidden="{{hideName}}">
+    <view class='close' bindtap="closeFn">
+      <image src='http://p5tezjdao.bkt.clouddn.com/images/del.png'></image>
+    </view>
+    <view class='cover_title'>输入兑换码兑换商品</view>
+    <input class='cover_input' type='text' placeholder='请输入您的口令码' bindinput='CinputFn' value='{{input_val}}'></input>
+    
+    <view class='cover_commit' hidden="{{!targetId}}" bindtap='commitFn'>
+     立即获得礼品
+    </view>
+    
+  </view>
+
+  <view class='cover cover2' hidden="{{successfn}}"></view>
+  <view class='cover_con,.cover_con2' hidden="{{successfn}}">
+    <view class='cover_title'>恭喜您验证成功！</view>
+    <!-- <input class='cover_input' type='text' placeholder='请输入您的口令码' bindinput='CinputFn' value='{{input_val}}'></input> -->
+    
+    <view class='cover_commit2'>
+      <navigator target="miniProgram" open-type="navigate" app-id="{{appID}}" path="pages/index/index" extra-data="datas" version="release">前往获取礼品</navigator>
+    </view>
+    
+  </view>
