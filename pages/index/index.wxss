@@ -80,7 +80,8 @@
         background: rgba(193,193,193,.7);
       }
       .cover_con {
-        position: fixed;
+        z-index: 99;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;

@@ -36,7 +36,7 @@
       </view>
     </view>
   </view>
-  <button class='footer_btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">开心兑，领礼品</button>
+  <button class='footer_btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">欢乐兑，领礼品</button>
 
   <view class='cover' hidden="{{hideName}}"></view>
   <view class='cover_con' hidden="{{hideName}}">
@@ -44,7 +44,7 @@
       <image src='http://p5tezjdao.bkt.clouddn.com/images/del.png'></image>
     </view>
     <view class='cover_title'>输入兑换码兑换商品</view>
-    <input class='cover_input' type='text' placeholder='请输入您的口令码' bindinput='CinputFn' value='{{input_val}}'></input>
+    <input class='cover_input' type='text' placeholder='请输入您的口令码' bindinput='CinputFn' value='{{input_val}}' cursor-spacing='80'></input>
     
     <view class='cover_commit' hidden="{{!targetId}}" bindtap='commitFn'>
      立即获得礼品
