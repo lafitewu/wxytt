@@ -153,18 +153,20 @@ Page({
           console.log(res);
           if (res.data.code == 1 && res.data.data.wxid != "") {
             var AppID = res.data.data.wxid;
+            var jumpurl = res.data.data.jumpurl;
             _self.setData({
               goldTime: res.data.data.duration,
-              desc: res.data.data.description
+              desc: res.data.data.guide
             })
             wx.showToast({
               title: '加载中',
               icon: 'loading',
               duration: 500
             });
-            var ContentToast = res.data.data.description;
+            var ContentToast = res.data.data.guide;
             setTimeout(function(){
               console.log(AppID);
+              console.log(jumpurl);
               wx.showModal({
                 title: '温馨提示',
                 content: ContentToast,
@@ -172,7 +174,7 @@ Page({
                   if (res.confirm) {
                     wx.navigateToMiniProgram({
                       appId: AppID,
-                      path: 'pages/index/index',
+                      path: jumpurl,
                       extraData: {},
                       envVersion: 'release',
                       success(res) {
